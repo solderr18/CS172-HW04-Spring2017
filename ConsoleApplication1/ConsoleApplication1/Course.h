@@ -31,16 +31,19 @@ public:
 			students = test;
 			delete[] test;
 			Capacity++;
+			NumberOfStudents++; 
 		}
-		students[NumberOfStudents] = name;
-		NumberOfStudents++; 
+		else {
+			students[NumberOfStudents + 1] = name;
+			NumberOfStudents++;
+		}
 	}
 	void dropStudent(const string& name) { 
 		//copy things that aren't the student youre removing into new array
 		int j = 0;
 		string * placeholder = new string[Capacity];
 		for (int i = 0; i < NumberOfStudents; i++) {
-			if (students[i] != name) {
+			if (students[i] != name) { //when it reaches the name, it will skip this & j wont incriment
 				placeholder[j] = students[i];
 				j++;
 			}
@@ -71,8 +74,9 @@ public:
 	}
 
 	//end assignment code
-	string * getStudents() const { return students; }
-
+	string * getStudents() const { return students; } //there is a problem with this fxn but I dont know what
+													// won't return (pointer to ) array?
+													//something wrong with add/drop student code??
 	int getNumberOfStudents() const { return NumberOfStudents; }
 
 	void printCourse(const Course c) { //for organization in test

@@ -68,7 +68,7 @@ int main() {
 	course1.dropStudent("peter2");
 	cout << "Students in Computer Science";
 	for (int i = 0; i < course1.getNumberOfStudents(); i++) {
-		cout << course1.getStudents()[i] << endl;
+		cout << (course1.getStudents())[i] << endl;
 	}
 	return 0;
 }
